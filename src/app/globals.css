@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+    --surface: #f9f9f9;
+    --surface-low: #f3f3f4;
+    --surface-high: #e8e8e8;
+    --primary: #000000;
+    --on-primary: #ffffff;
+    --secondary: #5d5f5f;
+    --border-color: #000000;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-inter);
+    background-color: var(--surface);
+    color: var(--primary);
+  }
+
+  ::selection {
+    background-color: #000000;
+    color: #ffffff;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Editorial Grid Background */
+.grid-bg {
+  background-size: 80px 80px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Image Zoom Hover */
+.img-hover {
+  overflow: hidden;
+}
+
+.img-hover img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+}
+
+.img-hover:hover img {
+  transform: scale(1.04);
+}
+
+/* Custom Editorial Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f9f9f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1b1b1b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
 }
