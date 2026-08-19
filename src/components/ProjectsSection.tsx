@@ -25,33 +25,43 @@ export default function ProjectsSection({ onSelectProject }: ProjectsSectionProp
 
         <div className="flex items-center gap-4">
           <span className="text-xs font-mono text-[#5d5f5f] uppercase tracking-wider">
-            [ 04 CASE STUDIES ]
+            [ {PROJECTS.length.toString().padStart(2, "0")} CASE STUDIES ]
           </span>
         </div>
       </div>
 
-      {/* 2x2 Projects Grid */}
+      {/* Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-y border-black">
         {PROJECTS.map((project, index) => {
-          const isRightBorder = index % 2 === 0;
-          const isBottomBorder = index < 2;
+          const isOddTotal = PROJECTS.length % 2 !== 0;
+          const isLastItem = index === PROJECTS.length - 1;
+          const isFullWidth = isOddTotal && isLastItem;
+          const isRightCol = index % 2 === 1;
 
           return (
             <div
               key={project.id}
               onClick={() => onSelectProject(project)}
               className={`group block cursor-pointer transition-all duration-300 border-black ${
-                isRightBorder ? "md:border-r" : ""
-              } ${isBottomBorder ? "border-b" : index === 2 ? "border-b md:border-b-0" : ""}`}
+                isFullWidth
+                  ? "col-span-1 md:col-span-2 border-t md:border-t"
+                  : !isRightCol
+                  ? "md:border-r border-b"
+                  : "border-b"
+              }`}
             >
-              {/* Image Preview Container (4/3 aspect ratio) */}
-              <div className="img-hover aspect-[4/3] border-b border-black bg-[#f3f3f4] p-4 sm:p-6 md:p-8 flex items-center justify-center relative">
+              {/* Image Preview Container */}
+              <div
+                className={`img-hover border-b border-black bg-[#f3f3f4] p-4 sm:p-6 md:p-8 flex items-center justify-center relative ${
+                  isFullWidth ? "aspect-[16/9] md:aspect-[21/9]" : "aspect-[4/3]"
+                }`}
+              >
                 <div className="w-full h-full relative overflow-hidden border border-black shadow-xs">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes={isFullWidth ? "100vw" : "(max-width: 768px) 100vw, 50vw"}
                     className="object-cover filter grayscale contrast-105 group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
                   <div className="absolute top-3 left-3 bg-black text-white text-[10px] font-mono px-2 py-0.5 tracking-wider uppercase">
@@ -69,9 +79,12 @@ export default function ProjectsSection({ onSelectProject }: ProjectsSectionProp
                   <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-tight">
                     {project.title}
                   </h3>
+                  <p className="text-xs sm:text-sm font-mono text-neutral-500 group-hover:text-neutral-300 mt-0.5">
+                    {project.subtitle}
+                  </p>
                 </div>
 
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 shrink-0">
                   <span className="text-[11px] font-mono uppercase tracking-wider hidden sm:inline opacity-0 group-hover:opacity-100 transition-opacity">
                     VIEW DETAILS
                   </span>

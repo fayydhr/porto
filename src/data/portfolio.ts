@@ -142,7 +142,7 @@ export const PROJECTS: Project[] = [
     title: "ERP BUSINESS SYSTEM",
     subtitle: "Enterprise Resource & Logistics Management",
     category: "Full Stack / Enterprise",
-    image: "/images/project-erp.jpg",
+    image: "/images/Gemini_Generated_Image_8cvdtc8cvdtc8cvd.jpeg",
     year: "2026",
     description:
       "A comprehensive corporate enterprise resource planning platform tailored for real-time inventory tracking, procurement automation, financial balance tracking, and role-based access control.",
@@ -161,7 +161,7 @@ export const PROJECTS: Project[] = [
     title: "NOVELID",
     subtitle: "Digital Reading & Creative Publishing Platform",
     category: "Web Application",
-    image: "/images/project-novelid.jpg",
+    image: "/images/Gemini_Generated_Image_keb71fkeb71fkeb7.jpeg",
     year: "2025",
     description:
       "A responsive community web app for authors and readers featuring rich-text publishing, chapter-by-chapter bookmarks, customizable reader mode with dark themes, and reader engagement.",
@@ -180,7 +180,7 @@ export const PROJECTS: Project[] = [
     title: "WEATHER APPLICATION",
     subtitle: "Hyperlocal Forecast & Meteorological Insights",
     category: "Frontend / API Integration",
-    image: "/images/project-weather.jpg",
+    image: "/images/Gemini_Generated_Image_mx4muamx4muamx4m.jpeg",
     year: "2025",
     description:
       "An ultra-fast, minimalist meteorological dashboard providing hourly weather forecasts, radar simulation maps, air quality index metrics, and geolocation detection.",
@@ -199,7 +199,7 @@ export const PROJECTS: Project[] = [
     title: "FOOD CALORIE TRACKER",
     subtitle: "Nutritional Health & Meal Analytics",
     category: "Full Stack / HealthTech",
-    image: "/images/project-calorie.jpg",
+    image: "/images/Gemini_Generated_Image_u960wzu960wzu960.jpeg",
     year: "2024",
     description:
       "A personal nutrition tracking application designed to help users log daily calorie intake, track macronutrient distributions, set fitness targets, and analyze dietary habits over time.",
@@ -211,6 +211,25 @@ export const PROJECTS: Project[] = [
     techStack: ["React Native", "Next.js", "Tailwind CSS", "Express.js", "PostgreSQL"],
     demoUrl: "https://example.com/calorie-tracker",
     githubUrl: "https://github.com/fayyadh/food-calorie-tracker",
+  },
+  {
+    id: "ai-chatbot",
+    number: "05",
+    title: "AI KNOWLEDGE CHATBOT",
+    subtitle: "LLM Assistant & PDF Extraction System",
+    category: "AI Engineering / Full Stack",
+    image: "/images/Gemini_Generated_Image_z8pqs5z8pqs5z8pq.jpeg",
+    year: "2025",
+    description:
+      "An intelligent internal knowledge chatbot powered by DeepSeek LLM through OpenRouter API, featuring real-time conversational assistance, PDF document extraction, chat session history, and MySQL database integration.",
+    highlights: [
+      "Natural language document QA and automatic PDF knowledge parsing",
+      "DeepSeek model integration via low-latency OpenRouter endpoints",
+      "Granular user authentication and persistent chat session management",
+    ],
+    techStack: ["React", "Tailwind CSS", "Python", "Flask", "DeepSeek AI", "OpenRouter", "MySQL"],
+    demoUrl: "https://example.com/ai-assistant",
+    githubUrl: "https://github.com/fayyadh/ai-knowledge-chatbot",
   },
 ];
 
