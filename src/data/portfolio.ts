@@ -275,7 +275,7 @@ export const PROJECTS: Project[] = [
     title: "TASK MANAGEMENT & TO-DO LIST APP",
     subtitle: "Multi-Platform Task & Project Management App",
     category: "Mobile / Productivity",
-    image: "/images/Gemini_Generated_Image_l8mja1l8mja1l8mj.jpeg",
+    image: "/images/Gemini_Generated_Image_u960wzu960wzu960.jpeg",
     year: "2026",
     figmaUrl: "https://www.figma.com/community/file/1143575071825582037/task-management-to-do-list-app",
     description:
@@ -368,9 +368,6 @@ export const PROJECTS: Project[] = [
           "Action · Adventure · Comedy · Drama · Fantasy · Historical · Horror · Martial Arts · Mystery · Romance · Sci-Fi · Slice of Life · Supernatural · Tragedy · and others",
       },
     ],
-    disclaimer:
-      "NovelID is a reader interface application that displays content from third-party sources publicly available on the internet. NovelID does not own, create, store, or host any novel content. All copyrights to the novels and their content belong entirely to the original authors, publishers, and/or relevant licensees.\n\nIf you are a copyright holder and believe any content violates your intellectual property rights, please contact us via email for removal.",
-    contactEmail: "novelindonesia0@gmail.com",
     githubUrl: undefined,
   },
 ];
