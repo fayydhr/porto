@@ -260,6 +260,21 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               </a>
             )}
 
+            {project.figmaUrl && (
+              <a
+                href={project.figmaUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#1e1e1e] text-white text-xs font-mono font-bold uppercase tracking-wider border border-black hover:bg-[#a259ff] hover:text-white transition-colors"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 38 57" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 28.5c0-5.247 4.253-9.5 9.5-9.5s9.5 4.253 9.5 9.5-4.253 9.5-9.5 9.5M0 47.5C0 42.253 4.253 38 9.5 38H19v9.5c0 5.247-4.253 9.5-9.5 9.5S0 52.747 0 47.5M0 28.5C0 23.253 4.253 19 9.5 19H19v19H9.5C4.253 38 0 33.747 0 28.5M0 9.5C0 4.253 4.253 0 9.5 0H19v19H9.5C4.253 19 0 14.747 0 9.5M19 0h9.5c5.247 0 9.5 4.253 9.5 9.5s-4.253 9.5-9.5 9.5H19V0z"/>
+                </svg>
+                <span>FIGMA DESIGN</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            )}
+
             {project.githubUrl && (
               <a
                 href={project.githubUrl}

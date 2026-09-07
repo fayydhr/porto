@@ -27,6 +27,7 @@ export interface Project {
   demoUrl?: string;
   githubUrl?: string;
   playStoreUrl?: string;
+  figmaUrl?: string;
 }
 
 export interface Experience {
@@ -153,43 +154,14 @@ export const EXPERIENCES: Experience[] = [
 
 export const PROJECTS: Project[] = [
   {
-    id: "ecommerce-flutter-app",
-    number: "01",
-    title: "E-COMMERCE MOBILE APP",
-    subtitle: "Full-featured Shopping & Order Management",
-    category: "Mobile / Full Stack",
-    image: "/images/Gemini_Generated_Image_8cvdtc8cvdtc8cvd.jpeg",
-    year: "2026",
-    description:
-      "A comprehensive mobile e-commerce platform built with Flutter, featuring real-time product browsing, cart & wishlist management, secure authentication with Firebase, and seamless order experience with clean architecture.",
-    highlights: [
-      "Clean Architecture with Domain, Data & Presentation layers",
-      "Firebase Auth with Google Sign-In & OTP email verification",
-      "Real-time cart, wishlist, and product category filtering",
-      "Role-based navigation and state management using GetX",
-      "Push notification support and shared preferences local storage",
-    ],
-    techStack: [
-      "Flutter",
-      "Dart",
-      "Firebase Auth",
-      "Cloud Firestore",
-      "GetX",
-      "Google Sign-In",
-      "Shared Preferences",
-      "Clean Architecture",
-    ],
-    demoUrl: undefined,
-    githubUrl: "https://github.com/fayydhr/ecommerce-app",
-  },
-  {
     id: "nutri-ai-app",
-    number: "02",
-    title: "NUTRI AI FOOD CALORIE TRACKER APP (COMMUNITY)",
+    number: "01",
+    title: "NUTRI AI FOOD CALORIE TRACKER APP",
     subtitle: "AI Food & Nutrition Calorie Tracker",
     category: "Mobile / AI",
     image: "/images/Gemini_Generated_Image_3yt2ek3yt2ek3yt2.jpeg",
     year: "2026",
+    figmaUrl: "https://www.figma.com/community/file/1500608399091759099/nutri-ai-food-calorie-tracker-app",
     description:
       "Aplikasi mobile lintas platform berbasis AI yang dirancang untuk mempermudah pemantauan nutrisi harian pengguna secara otomatis. Mengintegrasikan model kecerdasan buatan untuk menganalisis dan mendeteksi kalori makanan secara instan, mengelola log asupan harian, serta menyajikan visualisasi analitik pola makan.",
     highlights: [
@@ -214,6 +186,38 @@ export const PROJECTS: Project[] = [
     ],
     demoUrl: undefined,
     githubUrl: "https://github.com/fayydhr/nutri-ai-app",
+  },
+  {
+    id: "ecommerce-flutter-app",
+    number: "02",
+    title: "E-COMMERCE MOBILE APP",
+    subtitle: "Full-featured Shopping & Order Management",
+    category: "Mobile / Full Stack",
+    image: "/images/Gemini_Generated_Image_8cvdtc8cvdtc8cvd.jpeg",
+    year: "2026",
+    figmaUrl:
+      "https://www.figma.com/community/file/1362309395455453748/ecommerce-app-ui-kit-freebie?q_id=d7a47217-922b-4466-a60e-39117a56158a",
+    description:
+      "A comprehensive mobile e-commerce platform built with Flutter, featuring real-time product browsing, cart & wishlist management, secure authentication with Firebase, and seamless order experience with clean architecture.",
+    highlights: [
+      "Clean Architecture with Domain, Data & Presentation layers",
+      "Firebase Auth with Google Sign-In & OTP email verification",
+      "Real-time cart, wishlist, and product category filtering",
+      "Role-based navigation and state management using GetX",
+      "Push notification support and shared preferences local storage",
+    ],
+    techStack: [
+      "Flutter",
+      "Dart",
+      "Firebase Auth",
+      "Cloud Firestore",
+      "GetX",
+      "Google Sign-In",
+      "Shared Preferences",
+      "Clean Architecture",
+    ],
+    demoUrl: undefined,
+    githubUrl: "https://github.com/fayydhr/ecommerce-app",
   },
   {
     id: "garam-dua-musim-erp",
@@ -266,23 +270,38 @@ export const PROJECTS: Project[] = [
     githubUrl: undefined,
   },
   {
-    id: "calorie-tracker",
+    id: "task-management-app",
     number: "04",
-    title: "FOOD CALORIE TRACKER",
-    subtitle: "Nutritional Health & Meal Analytics",
-    category: "Full Stack / HealthTech",
-    image: "/images/Gemini_Generated_Image_u960wzu960wzu960.jpeg",
-    year: "2024",
+    title: "TASK MANAGEMENT & TO-DO LIST APP",
+    subtitle: "Multi-Platform Task & Project Management App",
+    category: "Mobile / Productivity",
+    image: "/images/Gemini_Generated_Image_l8mja1l8mja1l8mj.jpeg",
+    year: "2026",
+    figmaUrl: "https://www.figma.com/community/file/1143575071825582037/task-management-to-do-list-app",
     description:
-      "A personal nutrition tracking application designed to help users log daily calorie intake, track macronutrient distributions, set fitness targets, and analyze dietary habits over time.",
+      "Aplikasi manajemen tugas dan catatan harian berbasis multi-platform yang dirancang untuk membantu pengguna mengorganisasi proyek, memantau tenggat waktu, serta meningkatkan produktivitas secara terstruktur. Aplikasi ini mengintegrasikan sistem penyimpanan lokal yang efisien untuk akses cepat tanpa bergantung pada koneksi internet, dilengkapi navigasi intuitif untuk pengelolaan tugas harian dan pencatatan ide.",
     highlights: [
-      "Extensive food database search with quick barcode entry simulation",
-      "Dynamic calorie and macro-nutrient progress rings",
-      "Weekly nutritional summary export and health insights",
+      "Task & To-Do Management: Membuat, memperbarui, dan memantau status tugas harian secara terorganisasi melalui antarmuka tugas harian.",
+      "Project Organization: Mengelompokkan aktivitas dan daftar pekerjaan ke dalam modul proyek tersendiri guna mempermudah pemantauan progres.",
+      "Integrated Notes Module: Menyediakan fitur pencatatan terintegrasi untuk menyimpan dokumentasi, ide, atau catatan tambahan terkait proyek.",
+      "Local Storage Persistence: Menggunakan mekanisme penyimpanan data lokal untuk menjaga privasi serta performa baca-tulis data yang responsif.",
+      "Clean Architecture & GetX State Management: Menerapkan pemisahan layer Domain, Data, dan Presentation yang dipadukan dengan kontroler GetX untuk arsitektur kode yang teruji, reaktif, dan modular.",
     ],
-    techStack: ["React Native", "Next.js", "Tailwind CSS", "Express.js", "PostgreSQL"],
-    demoUrl: "https://example.com/calorie-tracker",
-    githubUrl: "https://github.com/fayyadh/food-calorie-tracker",
+    techStack: [
+      "Flutter",
+      "Dart",
+      "Clean Architecture",
+      "GetX",
+      "Local Storage",
+      "Android",
+      "iOS",
+      "macOS",
+      "Windows",
+      "Linux",
+      "Web",
+    ],
+    demoUrl: undefined,
+    githubUrl: "https://github.com/fayydhr/task-management-app",
   },
   {
     id: "novelid",
