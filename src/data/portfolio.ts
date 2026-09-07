@@ -1,3 +1,8 @@
+export interface ModuleBreakdown {
+  module: string;
+  description: string;
+}
+
 export interface Project {
   id: string;
   number: string;
@@ -6,9 +11,11 @@ export interface Project {
   category: string;
   image: string;
   year: string;
+  status?: string;
   description: string;
   highlights: string[];
   techStack: string[];
+  moduleBreakdown?: ModuleBreakdown[];
   demoUrl?: string;
   githubUrl?: string;
 }
@@ -36,9 +43,9 @@ export interface Service {
 export const PERSONAL_INFO = {
   name: "Muhammad Fayyadh Rahinda",
   brand: "FAYYDHR®",
-  title: "SOFTWARE ENGINEER",
+  title: "FLUTTER & MOBILE DEVELOPER",
   subtitle:
-    "Building thoughtful digital experiences, scalable applications, and modern products through code and design.",
+    "Crafting high-performance mobile experiences with Flutter & Dart, backed by full-stack capabilities to build end-to-end digital products.",
   location: "Indonesia / Remote",
   year: "2026",
   email: "fayyadh.rahinda@example.com",
@@ -56,15 +63,15 @@ export const PERSONAL_INFO = {
     },
     {
       label: "ROLE",
-      value: "Full Stack Developer\nUI/UX Designer",
+      value: "Flutter & Mobile Developer\nFull Stack Engineer",
     },
     {
       label: "FOCUS",
-      value: "Scalable Systems\nPerformance Optimization",
+      value: "Mobile-First Products\nClean Architecture",
     },
     {
       label: "STACK",
-      value: "React, Node.js, Next.js, Python\nAWS, PostgreSQL, Tailwind",
+      value: "Flutter, Dart, Firebase, GetX\nNext.js, Node.js, PostgreSQL",
     },
   ],
 };
@@ -137,23 +144,34 @@ export const EXPERIENCES: Experience[] = [
 
 export const PROJECTS: Project[] = [
   {
-    id: "erp-system",
+    id: "ecommerce-flutter-app",
     number: "01",
-    title: "ERP BUSINESS SYSTEM",
-    subtitle: "Enterprise Resource & Logistics Management",
-    category: "Full Stack / Enterprise",
+    title: "E-COMMERCE MOBILE APP",
+    subtitle: "Full-featured Shopping & Order Management",
+    category: "Mobile / Full Stack",
     image: "/images/Gemini_Generated_Image_8cvdtc8cvdtc8cvd.jpeg",
     year: "2026",
     description:
-      "A comprehensive corporate enterprise resource planning platform tailored for real-time inventory tracking, procurement automation, financial balance tracking, and role-based access control.",
+      "A comprehensive mobile e-commerce platform built with Flutter, featuring real-time product browsing, cart & wishlist management, secure authentication with Firebase, and seamless order experience with clean architecture.",
     highlights: [
-      "Real-time inventory audit and warehouse shipment logging",
-      "Automated PDF invoicing and financial reconciliation",
-      "Granular role-based permissions and activity logs",
+      "Clean Architecture with Domain, Data & Presentation layers",
+      "Firebase Auth with Google Sign-In & OTP email verification",
+      "Real-time cart, wishlist, and product category filtering",
+      "Role-based navigation and state management using GetX",
+      "Push notification support and shared preferences local storage",
     ],
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Prisma", "Chart.js"],
-    demoUrl: "https://example.com/erp-demo",
-    githubUrl: "https://github.com/fayyadh/erp-business-system",
+    techStack: [
+      "Flutter",
+      "Dart",
+      "Firebase Auth",
+      "Cloud Firestore",
+      "GetX",
+      "Google Sign-In",
+      "Shared Preferences",
+      "Clean Architecture",
+    ],
+    demoUrl: undefined,
+    githubUrl: "https://github.com/fayydhr/ecommerce-app",
   },
   {
     id: "novelid",
@@ -175,23 +193,54 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/fayyadh/novelid-platform",
   },
   {
-    id: "weather-app",
+    id: "garam-dua-musim-erp",
     number: "03",
-    title: "WEATHER APPLICATION",
-    subtitle: "Hyperlocal Forecast & Meteorological Insights",
-    category: "Frontend / API Integration",
+    title: "GARAM DUA MUSIM ERP",
+    subtitle: "Integrated Business Management System & End-to-End Operations",
+    category: "Fullstack / ERP / Business Management System",
     image: "/images/Gemini_Generated_Image_mx4muamx4muamx4m.jpeg",
-    year: "2025",
+    year: "2025–2026",
+    status: "IN PRODUCTION",
     description:
-      "An ultra-fast, minimalist meteorological dashboard providing hourly weather forecasts, radar simulation maps, air quality index metrics, and geolocation detection.",
+      "A comprehensive, role-based Enterprise Resource Planning (ERP) system built for Garam Dua Musim — a salt production & distribution company. The system manages the full operational lifecycle from sales order creation, multi-level validation, production scheduling, warehouse management, QC testing, logistics, and financial reporting across 8 distinct user roles.",
     highlights: [
-      "Geo-location auto detection with interactive radar maps",
-      "7-day hourly precipitation and UV radiation graphs",
-      "Offline caching and lightning-fast client-side state handling",
+      "Role-based access control with 8 roles: sales, admin_finance, gudang, produksi, qc, atasan, qa, hr",
+      "Full order lifecycle management — from draft to menunggu_validasi, divalidasi, diproses, siap_dikirim, and selesai",
+      "Production & QC workflow — Work Orders, production requests, and QC testing stages (menunggu_sampel, proses_pengujian, rilis)",
+      "Real-time push notifications via Web Push (VAPID) and Telegram Bot integration per department",
+      "Fund request & financial flows — dana pengajuan approval chain (pending, disetujui, dicairkan)",
+      "Document generation — Invoice & Surat Jalan export as .docx and Excel via ExcelJS",
+      "MySQL + Prisma ORM with MariaDB adapter, Supabase for file storage",
     ],
-    techStack: ["TypeScript", "React", "OpenWeather API", "Leaflet", "Tailwind CSS"],
-    demoUrl: "https://example.com/weather-app",
-    githubUrl: "https://github.com/fayyadh/weather-insights",
+    techStack: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Prisma ORM",
+      "MySQL / MariaDB",
+      "Supabase",
+      "NextAuth v5",
+      "Tailwind CSS v4",
+      "Recharts",
+      "Lucide React",
+      "ExcelJS",
+      "docx",
+      "Web Push",
+      "Telegram Bot API",
+      "SweetAlert2",
+    ],
+    moduleBreakdown: [
+      { module: "Sales", description: "Pembuatan & tracking pesanan, pembayaran, dokumen" },
+      { module: "Admin / Finance", description: "Validasi pesanan, kas, laporan laba-rugi, piutang" },
+      { module: "Warehouse", description: "Penerimaan produksi, stok barang, PO confirmation" },
+      { module: "Production", description: "Work order, permintaan produksi, bahan baku" },
+      { module: "QC", description: "Pengujian kualitas, status rilis / tidak layak" },
+      { module: "Logistics", description: "Pengiriman, serah terima" },
+      { module: "HR", description: "Manajemen karyawan" },
+      { module: "QA", description: "Quality assurance & audit" },
+    ],
+    demoUrl: undefined,
+    githubUrl: undefined,
   },
   {
     id: "calorie-tracker",
@@ -235,18 +284,18 @@ export const PROJECTS: Project[] = [
 
 export const SERVICES: Service[] = [
   {
+    id: "mobile-dev",
+    iconName: "smartphone",
+    title: "MOBILE",
+    description: "Building polished, high-performance cross-platform apps with Flutter & Dart for iOS and Android.",
+    skills: ["Flutter & Dart", "Firebase & GetX", "Clean Architecture", "Google Play / App Store"],
+  },
+  {
     id: "web-dev",
     iconName: "web",
     title: "WEB DEV",
     description: "Building responsive, accessible, and performant web applications.",
     skills: ["React & Next.js", "TypeScript", "Tailwind CSS", "Web Vitals Optimization"],
-  },
-  {
-    id: "mobile-dev",
-    iconName: "smartphone",
-    title: "MOBILE",
-    description: "Creating cross-platform mobile experiences that feel native.",
-    skills: ["React Native", "Expo", "PWA", "Offline First"],
   },
   {
     id: "backend-dev",

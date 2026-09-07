@@ -15,7 +15,7 @@ export default function Hero() {
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             BASED IN INDONESIA
           </span>
-          <span className="hidden sm:inline">FULL STACK DEVELOPER</span>
+          <span className="hidden sm:inline">MOBILE DEVELOPER</span>
           <span className="font-bold text-black">{PERSONAL_INFO.year}</span>
         </div>
 
@@ -23,13 +23,13 @@ export default function Hero() {
         <div className="my-auto py-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-black/5 border border-black/15 text-[11px] font-mono uppercase tracking-wider mb-6">
             <Code2 className="w-3.5 h-3.5" />
-            <span>Modern Web Architecture & Systems</span>
+            <span>Flutter & Mobile Architecture</span>
           </div>
 
           <h1 className="text-5xl sm:text-7xl lg:text-[112px] font-extrabold uppercase tracking-tighter leading-[0.92] text-black mb-6">
-            SOFTWARE
+            MOBILE
             <br />
-            ENGINEER
+            DEVELOPER
           </h1>
 
           <p className="text-lg sm:text-xl lg:text-2xl max-w-xl text-[#3d3d3d] font-normal leading-relaxed">

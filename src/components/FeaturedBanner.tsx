@@ -9,7 +9,7 @@ interface FeaturedBannerProps {
 }
 
 export default function FeaturedBanner({ onSelectProject }: FeaturedBannerProps) {
-  const featured = PROJECTS[0]; // ERP System
+  const featured = PROJECTS.find((p) => p.id === "garam-dua-musim-erp") ?? PROJECTS[0];
 
   return (
     <section className="border-b border-black overflow-hidden relative">
@@ -52,7 +52,7 @@ export default function FeaturedBanner({ onSelectProject }: FeaturedBannerProps)
             FLAGSHIP CASE STUDY
           </span>
           <h2 className="text-4xl sm:text-7xl md:text-9xl font-extrabold text-white uppercase tracking-tighter drop-shadow-2xl">
-            ERP SYSTEM
+            GARAM DUA MUSIM ERP
           </h2>
           <div className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 bg-white text-black font-mono text-xs uppercase font-bold tracking-wider transform group-hover:scale-105 transition-transform">
             <span>INSPECT CASE STUDY</span>

@@ -71,6 +71,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               src={project.image}
               alt={project.title}
               fill
+              sizes="(max-width: 768px) 100vw, 896px"
               className="object-cover filter grayscale contrast-105"
             />
           </div>
@@ -98,12 +99,12 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
+              <div className={`w-2 h-2 rounded-full ${project.status === "IN PRODUCTION" ? "bg-emerald-500" : "bg-yellow-400"}`}></div>
               <div>
                 <span className="text-[10px] font-mono uppercase tracking-wider text-neutral-500 block">
                   STATUS
                 </span>
-                <span className="text-xs font-mono font-bold">COMPLETED / PRODUCTION</span>
+                <span className="text-xs font-mono font-bold">{project.status ?? "COMPLETED / PRODUCTION"}</span>
               </div>
             </div>
           </div>
@@ -149,6 +150,33 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               ))}
             </div>
           </div>
+
+          {/* Module Breakdown */}
+          {project.moduleBreakdown && project.moduleBreakdown.length > 0 && (
+            <div className="space-y-3">
+              <h4 className="text-xs font-mono uppercase tracking-widest text-[#5d5f5f] font-bold">
+                MODULE BREAKDOWN
+              </h4>
+              <div className="border border-black overflow-hidden">
+                <table className="w-full text-xs font-mono">
+                  <thead>
+                    <tr className="bg-black text-white">
+                      <th className="text-left px-4 py-2 uppercase tracking-wider font-bold w-1/3">Modul</th>
+                      <th className="text-left px-4 py-2 uppercase tracking-wider font-bold">Deskripsi</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {project.moduleBreakdown.map((row, idx) => (
+                      <tr key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-[#f3f3f4]"}>
+                        <td className="px-4 py-2.5 font-bold border-r border-black border-b border-neutral-200 uppercase">{row.module}</td>
+                        <td className="px-4 py-2.5 text-neutral-700 border-b border-neutral-200">{row.description}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
 
           {/* Actions */}
           <div className="pt-4 border-t border-black flex flex-wrap gap-4">
