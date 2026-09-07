@@ -3,6 +3,11 @@ export interface ModuleBreakdown {
   description: string;
 }
 
+export interface ProjectSection {
+  title: string;
+  content: string | string[];
+}
+
 export interface Project {
   id: string;
   number: string;
@@ -16,8 +21,12 @@ export interface Project {
   highlights: string[];
   techStack: string[];
   moduleBreakdown?: ModuleBreakdown[];
+  sections?: ProjectSection[];
+  disclaimer?: string;
+  contactEmail?: string;
   demoUrl?: string;
   githubUrl?: string;
+  playStoreUrl?: string;
 }
 
 export interface Experience {
@@ -278,21 +287,72 @@ export const PROJECTS: Project[] = [
   {
     id: "novelid",
     number: "05",
-    title: "NOVELID",
-    subtitle: "LLM Assistant & PDF Extraction System",
-    category: "AI Engineering / Full Stack",
+    title: "NOVELID — PUBLISHED ON PLAY STORE",
+    subtitle: "Indonesian Translated Novel Reading App",
+    category: "Mobile App / Play Store",
     image: "/images/Gemini_Generated_Image_z8pqs5z8pqs5z8pq.jpeg",
-    year: "2025",
+    year: "2025–2026",
+    status: "PUBLISHED ON PLAY STORE",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.novelidn.app",
+    demoUrl: "https://play.google.com/store/apps/details?id=com.novelidn.app",
     description:
-      "An intelligent internal knowledge chatbot powered by DeepSeek LLM through OpenRouter API, featuring real-time conversational assistance, PDF document extraction, chat session history, and MySQL database integration.",
+      "NovelID offers a modern, convenient Indonesian translated novel reading experience specifically designed for digital novel lovers. With a clean interface and intuitive features, NovelID is your best reading companion in the palm of your hand.",
     highlights: [
-      "Natural language document QA and automatic PDF knowledge parsing",
-      "DeepSeek model integration via low-latency OpenRouter endpoints",
-      "Granular user authentication and persistent chat session management",
+      "The Most Complete Collection: Thousands of translated titles across Fantasy, Romance, Action, Martial Arts, Sci-Fi, and 15+ genres.",
+      "Optimal Reading Experience: Elegant dark mode interface designed to reduce eye fatigue during prolonged reading.",
+      "Key Features: Automatic reading progress saving, bookmarks, history tracking, smart search, and instant chapter update notifications.",
+      "Guaranteed Privacy: 100% local device data storage — no personal data tracking or external server uploads.",
+      "Lightweight & Account-Free: Fast performance with data saving mode; usable without registering an account.",
     ],
-    techStack: ["React", "Tailwind CSS", "Python", "Flask", "DeepSeek AI", "OpenRouter", "MySQL"],
-    demoUrl: "https://example.com/novelid",
-    githubUrl: "https://github.com/fayydhr/novelid",
+    techStack: [
+      "Flutter",
+      "Dart",
+      "Google Play Store",
+      "Local Storage",
+      "Clean Architecture",
+      "Dark Mode Engine",
+    ],
+    sections: [
+      {
+        title: "THE MOST COMPLETE NOVEL COLLECTION",
+        content:
+          "Explore thousands of translated novel titles from various popular genres. From Fantasy, Romance, Action, Adventure, Martial Arts, Sci-Fi, to Slice of Life — all available in one app. Discover new stories every day with the latest chapter updates.",
+      },
+      {
+        title: "OPTIMAL READING EXPERIENCE",
+        content:
+          "NovelID is designed with a primary focus on reading comfort. The elegant dark mode interface helps reduce eye fatigue during prolonged reading. Every interface element is carefully designed to allow you to fully focus on the story.",
+      },
+      {
+        title: "KEY FEATURES",
+        content: [
+          "A collection of thousands of translated Indonesian novels",
+          "15+ genres available with a comprehensive filter system",
+          "Automatically saves reading progress",
+          "Favorites and bookmarks for quick access",
+          "Neatly recorded reading history",
+          "Search by title, genre, and status",
+          "Latest chapter update notifications",
+          "Modern appearance with dark mode",
+          "Lightweight performance and data-saving data",
+          "Can be used without registering an account",
+        ],
+      },
+      {
+        title: "GUARANTEED PRIVACY",
+        content:
+          "All user data is stored locally on your device. NovelID does not collect, upload, or share personal data with external servers or third parties. You have full control over your data.",
+      },
+      {
+        title: "AVAILABLE GENRES",
+        content:
+          "Action · Adventure · Comedy · Drama · Fantasy · Historical · Horror · Martial Arts · Mystery · Romance · Sci-Fi · Slice of Life · Supernatural · Tragedy · and others",
+      },
+    ],
+    disclaimer:
+      "NovelID is a reader interface application that displays content from third-party sources publicly available on the internet. NovelID does not own, create, store, or host any novel content. All copyrights to the novels and their content belong entirely to the original authors, publishers, and/or relevant licensees.\n\nIf you are a copyright holder and believe any content violates your intellectual property rights, please contact us via email for removal.",
+    contactEmail: "novelindonesia0@gmail.com",
+    githubUrl: undefined,
   },
 ];
 

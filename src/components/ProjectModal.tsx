@@ -178,9 +178,77 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </div>
           )}
 
+          {/* Custom Extended Sections */}
+          {project.sections && project.sections.length > 0 && (
+            <div className="space-y-6 pt-4 border-t border-neutral-300">
+              {project.sections.map((sec, idx) => (
+                <div key={idx} className="space-y-2">
+                  <h4 className="text-xs font-mono uppercase tracking-widest text-[#5d5f5f] font-bold flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-black rounded-full" />
+                    {sec.title}
+                  </h4>
+                  {Array.isArray(sec.content) ? (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                      {sec.content.map((bullet, bIdx) => (
+                        <div key={bIdx} className="flex items-start gap-2 text-sm text-neutral-700 bg-white p-2.5 border border-neutral-200">
+                          <span className="font-mono text-xs font-bold text-black select-none">▸</span>
+                          <span>{bullet}</span>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-sm text-neutral-700 leading-relaxed bg-white p-4 border border-neutral-200">
+                      {sec.content}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Disclaimer */}
+          {project.disclaimer && (
+            <div className="p-4 bg-neutral-100 border border-neutral-300 space-y-2">
+              <h4 className="text-xs font-mono uppercase tracking-widest text-red-600 font-bold">
+                DISCLAIMER
+              </h4>
+              <p className="text-xs text-neutral-600 leading-relaxed whitespace-pre-line font-mono">
+                {project.disclaimer}
+              </p>
+            </div>
+          )}
+
+          {/* Contact Email */}
+          {project.contactEmail && (
+            <div className="p-4 bg-black text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 font-mono text-xs">
+              <div>
+                <span className="text-neutral-400 block text-[10px] uppercase tracking-wider">SUPPORT & FEEDBACK CONTACT</span>
+                <span className="font-bold text-sm text-emerald-400">{project.contactEmail}</span>
+              </div>
+              <a
+                href={`mailto:${project.contactEmail}`}
+                className="px-4 py-2 bg-white text-black font-bold uppercase hover:bg-emerald-400 transition-colors"
+              >
+                Send Email
+              </a>
+            </div>
+          )}
+
           {/* Actions */}
-          <div className="pt-4 border-t border-black flex flex-wrap gap-4">
-            {project.demoUrl && (
+          <div className="pt-4 border-t border-black flex flex-wrap items-center gap-4">
+            {project.playStoreUrl && (
+              <a
+                href={project.playStoreUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2.5 px-6 py-3 bg-emerald-600 text-white text-xs font-mono font-bold uppercase tracking-wider border border-black hover:bg-emerald-700 transition-colors shadow-sm"
+              >
+                <ExternalLink className="w-4 h-4" />
+                <span>GET IT ON GOOGLE PLAY</span>
+              </a>
+            )}
+
+            {project.demoUrl && !project.playStoreUrl && (
               <a
                 href={project.demoUrl}
                 target="_blank"
@@ -206,7 +274,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
             <button
               onClick={onClose}
-              className="ml-auto px-6 py-3 text-xs font-mono uppercase text-neutral-500 hover:text-black hover:underline"
+              className="ml-auto px-6 py-3 text-xs font-mono uppercase text-neutral-500 hover:text-black hover:underline cursor-pointer"
             >
               CLOSE PREVIEW
             </button>

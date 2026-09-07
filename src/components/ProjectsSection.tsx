@@ -67,15 +67,38 @@ export default function ProjectsSection({ onSelectProject }: ProjectsSectionProp
                   <div className="absolute top-3 left-3 bg-black text-white text-[10px] font-mono px-2 py-0.5 tracking-wider uppercase">
                     {project.category}
                   </div>
+                  {project.playStoreUrl ? (
+                    <a
+                      href={project.playStoreUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="absolute top-3 right-3 bg-emerald-600 hover:bg-emerald-500 text-white text-[10px] font-mono font-bold px-2.5 py-1 tracking-wider uppercase flex items-center gap-1.5 border border-black shadow-xs transition-colors z-10"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                      PUBLISHED ON PLAY STORE
+                    </a>
+                  ) : project.status ? (
+                    <div className="absolute top-3 right-3 bg-black/90 text-white text-[10px] font-mono font-bold px-2.5 py-1 tracking-wider uppercase border border-white/20">
+                      {project.status}
+                    </div>
+                  ) : null}
                 </div>
               </div>
 
               {/* Bottom Info Bar */}
               <div className="p-6 sm:p-8 flex justify-between items-center group-hover:bg-black group-hover:text-white transition-colors duration-300">
                 <div>
-                  <span className="text-xs font-mono tracking-widest block mb-1 text-neutral-500 group-hover:text-neutral-300 font-bold">
-                    {project.number}
-                  </span>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-xs font-mono tracking-widest text-neutral-500 group-hover:text-neutral-300 font-bold">
+                      {project.number}
+                    </span>
+                    {project.status && (
+                      <span className="text-[10px] font-mono px-2 py-0.5 font-bold uppercase bg-emerald-500 text-black">
+                        {project.status}
+                      </span>
+                    )}
+                  </div>
                   <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-tight">
                     {project.title}
                   </h3>
